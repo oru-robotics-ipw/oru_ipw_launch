@@ -1,0 +1,13 @@
+session: diag
+
+init_cmd: |
+  source ~/ipw/ws/devel/setup.bash
+  export ROS_MASTER_URI=http://automower2:11311
+
+windows:
+  - name: rviz
+    panes:
+      - rviz
+  - name: hrp_teleop
+    panes:
+      - rosrun am_driver hrp_teleop.py

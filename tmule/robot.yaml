@@ -1,0 +1,21 @@
+session: robot
+
+init_cmd: |
+  source ~/ipw/ws/devel/setup.bash
+
+windows:
+  - name: roscore
+    panes:
+      - roscore
+    wait: 0
+    check: rostopic list
+  - name: sensors
+    panes:
+      - roslaunch realsense2_camera rs_camera.launch
+      - roslaunch oru_ipw_launch velodyne.launch
+  - name: misc
+    panes:
+      - roslaunch oru_ipw_description automower_robot_description.launch
+  - name: hrp
+    panes:
+      - roslaunch oru_ipw_launch hrp_driver.launch
