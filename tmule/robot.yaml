@@ -5,17 +5,21 @@ init_cmd: |
 
 windows:
   - name: roscore
+    tags: [core]
     panes:
       - roscore
     wait: 0
     check: rostopic list
   - name: sensors
+    tags: [other]
     panes:
       - roslaunch realsense2_camera rs_camera.launch
       - roslaunch oru_ipw_launch velodyne.launch
   - name: misc
+    tags: [other]
     panes:
       - roslaunch oru_ipw_description automower_robot_description.launch
   - name: hrp
+    tags: [other,hrp]
     panes:
       - roslaunch oru_ipw_launch hrp_driver.launch

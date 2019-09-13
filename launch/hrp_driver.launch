@@ -1,31 +1,8 @@
+<?xml version="1.0"?>
 <launch>
-  <!-- Override if you are not using the bottom USB connector but an internal serial port. -->
-  <arg name="serial_port" default="/dev/ttyUSB0" doc="Serial port to use for communicating with robot platform." />
-
-  <!-- Start the am_driver -->
-  <node name="am_driver_safe" pkg="am_driver_safe" type="am_driver_safe_node" output="screen">
-    <param name="serialPort" value="$(arg serial_port)" type="str" />
-    <param name="printCharge" value="false"/>
-
-    <param name="updateRate" value="50.0"/>
-
-    <param name="GPSCheckFreq" value="1"/>
-    <param name="sensorStatusCheckFreq" value="5"/>
-    <param name="encoderSensorFreq" value="10"/>
-    <param name="batteryCheckFreq" value="1"/>
-    <param name="loopSensorFreq" value="1"/>
-    <param name="wheelSensorFreq" value="50"/>
-    <param name="regulatorFreq" value="50"/>
-    <param name="setPowerFreq" value="0"/>
-    <param name="pitchRollFreq" value="10"/>
-    <param name="stateCheckFreq" value="1"/>
-
-    <param name="publishTf" value="1"/>
-    <param name="velocityRegulator" value="1"/>
-    <param name="pitchAndRoll" value="true"/>
-    <param name="publishEuler" value="true"/>
-    <param name="startWithoutLoop" value="true"/>
-
-    <param name="jsonFile" value="$(find am_driver_safe)/config/automower_hrp.json" type="string" />
-  </node>
+  <!-- Start the driver, but skip the robot state publisher etc -->
+  <include file="$(find am_driver_safe)/launch/automower_hrp.launch">
+    <arg name="serial_port" value="/dev/ttyUSB0" />
+    <arg name="driver_only" value="true" />
+  </include>
 </launch>
