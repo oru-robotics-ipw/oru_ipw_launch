@@ -9,5 +9,6 @@
       <arg name="calibration" value="$(find oru_ipw_description)/calibration/vlp16_calib.yaml" />
       <arg name="min_range" value="0.1" />
     </include>
+    <include file="$(find velodyne_pointcloud)/launch/laserscan_nodelet.launch" />
   </group>
 </launch>

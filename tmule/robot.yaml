@@ -19,6 +19,11 @@ windows:
     tags: [other]
     panes:
       - roslaunch oru_ipw_description automower_robot_description.launch
+      - roslaunch oru_ipw_maps lab.launch
+  - name: mcl
+    tags: [other]
+    panes:
+      - roslaunch oru_ipw_launch mcl_2d.launch
   - name: hrp
     tags: [other,hrp]
     panes:

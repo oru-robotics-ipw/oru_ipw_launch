@@ -7,24 +7,24 @@ Once the bag file has played, run:
 rosrun map_server map_saver -f <mymap>
 -->
 <launch>
-  <arg name="online" default="false" doc="Set to true to not use sim time" />
+  <arg name="online" default="false" doc="Set to true to run online SLAM" />
   <arg name="bag_file" default="" doc="Set to play a bag file automatically" />
   <arg name="rviz_enabled" default="true" doc="Set to false to not start rviz" />
 
   <param unless="$(arg online)" name="/use_sim_time" value="true" />
 
   <!-- Start velodyne packet to laser scan -->
-  <include file="$(find oru_ipw_launch)/launch/velodyne.launch" />
-  <include file="$(find velodyne_pointcloud)/launch/laserscan_nodelet.launch" />
+  <include unless="$(arg online)" file="$(find oru_ipw_launch)/launch/velodyne.launch" />
 
   <!-- Start robot description -->
-  <include file="$(find oru_ipw_description)/launch/automower_robot_description.launch" />
+  <include unless="$(arg online)" file="$(find oru_ipw_description)/launch/automower_robot_description.launch" />
 
   <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
     <param name="xmin" value="-1" />
     <param name="ymin" value="-1" />
     <param name="xmax" value="1" />
     <param name="ymax" value="1" />
+    <remap from="scan" to="/sensors/laser/scan" />
   </node>
 
   <group if="$(arg rviz_enabled)">

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!-- Launch QuickMCL localisation -->
+<launch>
+  <group ns="mcl">
+    <include file="$(find quickmcl)/launch/localiser.launch">
+      <arg name="internal_laser" value="true" />
+      <arg name="scan_topic" value="/sensors/laser/scan" />
+      <arg name="publish_particles" value="true" />
+    </include>
+  </group>
+</launch>

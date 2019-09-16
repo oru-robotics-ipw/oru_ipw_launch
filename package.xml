@@ -52,6 +52,7 @@
   <buildtool_depend>catkin</buildtool_depend>
   <depend>am_driver_safe</depend>
   <depend>oru_ipw_description</depend>
+  <depend>oru_ipw_maps</depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
