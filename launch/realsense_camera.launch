@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!-- Launch Velodyne nodelets -->
+<launch>
+  <include file="$(find realsense2_camera)/launch/rs_camera.launch">
+    <arg name="camera"            value="sensors/camera" />
+    <arg name="tf_prefix"         value="camera" />
+    <arg name="enable_pointcloud" value="false" />
+  </include>
+</launch>

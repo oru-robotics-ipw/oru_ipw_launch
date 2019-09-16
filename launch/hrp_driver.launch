@@ -1,8 +1,10 @@
 <?xml version="1.0"?>
 <launch>
-  <!-- Start the driver, but skip the robot state publisher etc -->
-  <include file="$(find am_driver_safe)/launch/automower_hrp.launch">
-    <arg name="serial_port" value="/dev/ttyUSB0" />
-    <arg name="driver_only" value="true" />
-  </include>
+  <group ns="hrp">
+    <!-- Start the driver, but skip the robot state publisher etc -->
+    <include file="$(find am_driver_safe)/launch/automower_hrp.launch">
+      <arg name="serial_port" value="/dev/ttyUSB0" />
+      <arg name="driver_only" value="true" />
+    </include>
+  </group>
 </launch>

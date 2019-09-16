@@ -10,4 +10,4 @@ windows:
       - rviz
   - name: hrp_teleop
     panes:
-      - rosrun am_driver hrp_teleop.py
+      - ROS_NAMESPACE=hrp rosrun am_driver hrp_teleop.py
