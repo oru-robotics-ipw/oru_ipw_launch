@@ -2,9 +2,13 @@
 <!-- Launch QuickMCL localisation -->
 <launch>
   <group ns="mcl">
+    <!-- Remap some topic back to outside namespace -->
+    <remap from="initialpose" to="/initialpose" />
+    <remap from="map" to="/map" />
+    <remap from="scan" to="/sensors/laser/scan" />
+    <!-- Include QuickMCL launch file -->
     <include file="$(find quickmcl)/launch/localiser.launch">
       <arg name="internal_laser" value="true" />
-      <arg name="scan_topic" value="/sensors/laser/scan" />
       <arg name="publish_particles" value="true" />
     </include>
   </group>
