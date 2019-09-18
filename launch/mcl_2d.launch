@@ -1,15 +1,18 @@
 <?xml version="1.0"?>
 <!-- Launch QuickMCL localisation -->
 <launch>
+  <arg name="sensor_topic" default="/sensors/laser/scan" />
+  <arg name="output" default="screen" />
   <group ns="mcl">
     <!-- Remap some topic back to outside namespace -->
     <remap from="initialpose" to="/initialpose" />
     <remap from="map" to="/map" />
-    <remap from="scan" to="/sensors/laser/scan" />
+    <remap from="scan" to="$(arg sensor_topic)" />
     <!-- Include QuickMCL launch file -->
     <include file="$(find quickmcl)/launch/localiser.launch">
       <arg name="internal_laser" value="true" />
       <arg name="publish_particles" value="true" />
+      <arg name="output" value="$(arg output)" />
     </include>
   </group>
 </launch>
