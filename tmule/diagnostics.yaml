@@ -8,6 +8,9 @@ windows:
   - name: rviz
     panes:
       - rviz
+  - name: rqt
+    panes:
+      - rqt
   - name: hrp_teleop
     panes:
       - ROS_NAMESPACE=hrp rosrun am_driver hrp_teleop.py

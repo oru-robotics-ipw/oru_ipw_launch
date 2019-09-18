@@ -4,6 +4,6 @@
   <include file="$(find realsense2_camera)/launch/rs_camera.launch">
     <arg name="camera"            value="sensors/camera" />
     <arg name="tf_prefix"         value="camera" />
-    <arg name="enable_pointcloud" value="false" />
+    <arg name="enable_pointcloud" value="true" />
   </include>
 </launch>

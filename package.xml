@@ -50,9 +50,12 @@
   <!-- Use doc_depend for packages you need only for building documentation: -->
   <!--   <doc_depend>doxygen</doc_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
-  <depend>am_driver_safe</depend>
-  <depend>oru_ipw_description</depend>
-  <depend>oru_ipw_maps</depend>
+  <exec_depend>am_driver_safe</exec_depend>
+  <exec_depend>oru_ipw_description</exec_depend>
+  <exec_depend>oru_ipw_maps</exec_depend>
+  <exec_depend>quickmcl</exec_depend>
+  <exec_depend>velodyne_driver</exec_depend>
+  <exec_depend>velodyne_pointcloud</exec_depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
