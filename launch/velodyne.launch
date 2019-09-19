@@ -9,6 +9,9 @@
       <arg name="calibration" value="$(find oru_ipw_description)/calibration/vlp16_calib.yaml" />
       <arg name="min_range" value="0.1" />
     </include>
-    <include file="$(find velodyne_pointcloud)/launch/laserscan_nodelet.launch" />
+    <include file="$(find velodyne_pointcloud)/launch/laserscan_nodelet.launch">
+      <!-- Decrease resolution to reduce load -->
+      <arg name="resolution" default="0.02" />
+    </include>
   </group>
 </launch>
