@@ -13,5 +13,8 @@
       <!-- Decrease resolution to reduce load -->
       <arg name="resolution" default="0.02" />
     </include>
+    <node pkg="nodelet" type="nodelet" name="heightmap_nodelet"
+      args="load velodyne_height_map/HeightMapNodelet velodyne_nodelet_manager">
+    </node>
   </group>
 </launch>
