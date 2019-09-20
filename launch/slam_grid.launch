@@ -32,7 +32,7 @@ rosrun map_server map_saver -f <mymap>
   </group>
 
   <group if="$(eval arg('bag_file') != '')">
-    <node pkg="rosbag" type="play" name="player" output="screen" args="--clock -r 1.0 $(arg bag_file)"/>
+    <node pkg="rosbag" type="play" name="player" output="screen" args="--clock -r 1.0 $(arg bag_file)" />
   </group>
 
 </launch>
