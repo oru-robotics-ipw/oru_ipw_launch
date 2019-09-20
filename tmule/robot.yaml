@@ -20,6 +20,7 @@ windows:
     panes:
       - roslaunch oru_ipw_description automower_robot_description.launch
       - roslaunch oru_ipw_maps lab.launch
+      - rosrun libsensors_monitor libsensors_monitor
   - name: mcl
     tags: [other]
     panes:
