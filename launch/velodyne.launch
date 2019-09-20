@@ -16,6 +16,8 @@
     </include>
     <node pkg="nodelet" type="nodelet" name="heightmap_nodelet"
           args="load velodyne_height_map/HeightMapNodelet velodyne_nodelet_manager">
+      <param name="cell_size" value="0.1" />
+      <param name="grid_dimensions" value="150" />
     </node>
   </group>
 </launch>
