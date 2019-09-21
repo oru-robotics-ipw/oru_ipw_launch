@@ -14,7 +14,7 @@ windows:
     tags: [other]
     panes:
       - roslaunch oru_ipw_launch realsense_camera.launch
-      - roslaunch oru_ipw_launch velodyne.launch
+      - roslaunch oru_ipw_launch velodyne.launch --screen
   - name: misc
     tags: [other]
     panes:
@@ -25,6 +25,10 @@ windows:
     tags: [other]
     panes:
       - roslaunch oru_ipw_launch mcl_2d.launch
+  - name: nav
+    tags: [other,nav]
+    panes:
+      - roslaunch oru_ipw_navigation navigation.launch
   - name: hrp
     tags: [other,hrp]
     panes:
