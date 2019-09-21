@@ -12,6 +12,7 @@
     <include file="$(find quickmcl)/launch/localiser.launch">
       <arg name="internal_laser" value="true" />
       <arg name="publish_particles" value="true" />
+      <arg name="localised_frame" value="base_footprint" />
       <arg name="output" value="$(arg output)" />
     </include>
   </group>

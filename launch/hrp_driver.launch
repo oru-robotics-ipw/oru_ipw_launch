@@ -15,6 +15,7 @@
       <arg name="setPowerFreq" default="0" />
       <arg name="pitchRollFreq" default="0.5" />
       <arg name="stateCheckFreq" default="1" />
+      <arg name="baseLinkFrame" default="base_footprint" />
     </include>
     <node pkg="oru_ipw_utils" type="command_inverter" name="command_inverter" />
   </group>
