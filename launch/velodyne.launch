@@ -14,10 +14,16 @@
       <!-- Decrease resolution to reduce load -->
       <arg name="resolution" default="0.02" />
     </include>
-    <node pkg="nodelet" type="nodelet" name="heightmap_nodelet"
+    <!--<node pkg="nodelet" type="nodelet" name="heightmap_nodelet"
           args="load velodyne_height_map/HeightMapNodelet velodyne_nodelet_manager">
       <param name="cell_size" value="0.1" />
       <param name="grid_dimensions" value="150" />
     </node>
+    -->
+    <include file="$(find velodyne_multi_laserscan)/launch/nodelet.launch">
+      <arg name="min_z" value="-0.7" />
+      <arg name="max_z" value="1.7" />
+      <param name="resolution" value="0.02" />
+    </include>
   </group>
 </launch>
