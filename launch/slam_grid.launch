@@ -5,6 +5,7 @@ Can also be used in online mode.
 
 Once the bag file has played, run:
 rosrun map_server map_saver -f <mymap>
+ROS_NAMESPACE=/planning rosrun map_server map_saver -f <mymap>_planning
 -->
 <launch>
   <arg name="online" default="false" doc="Set to true to run online SLAM" />
@@ -19,13 +20,25 @@ rosrun map_server map_saver -f <mymap>
   <!-- Start robot description -->
   <include unless="$(arg online)" file="$(find oru_ipw_description)/launch/automower_robot_description.launch" />
 
-  <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
+  <node pkg="gmapping" type="slam_gmapping" name="slam" output="screen">
     <param name="xmin" value="-1" />
     <param name="ymin" value="-1" />
     <param name="xmax" value="1" />
     <param name="ymax" value="1" />
     <remap from="scan" to="/sensors/laser/scan" />
   </node>
+
+  <group ns="/planning">
+    <node pkg="gmapping" type="slam_gmapping" name="multi_slam" output="screen">
+      <param name="xmin" value="-1" />
+      <param name="ymin" value="-1" />
+      <param name="xmax" value="1" />
+      <param name="ymax" value="1" />
+      <!-- We don't want both nodes publishing the transform! -->
+      <param name="transform_publish_period" value="0.0" />
+      <remap from="scan" to="/sensors/laser/multi_scan" />
+    </node>
+  </group>
 
   <group if="$(arg rviz_enabled)">
     <node pkg="rviz" type="rviz" name="$(anon rviz-1)" />
