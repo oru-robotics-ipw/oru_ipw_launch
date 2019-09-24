@@ -10,6 +10,6 @@
   <!-- Launch tracking -->
   <include file="$(find oru_ipw_launch)/launch/spencer/tracking.launch">
     <arg name="rgbd" default="false" />
-    <arg name="laser_low_confidence_detections" default="true" />
+    <arg name="laser_low_confidence_detections" default="$(arg low_confidence_detections)" />
   </include>
 </launch>
