@@ -12,7 +12,7 @@
     </include>
     <include file="$(find velodyne_pointcloud)/launch/laserscan_nodelet.launch">
       <!-- Decrease resolution to reduce load -->
-      <arg name="resolution" default="0.02" />
+      <arg name="resolution" default="0.004363323129985824" />
     </include>
     <!--<node pkg="nodelet" type="nodelet" name="heightmap_nodelet"
           args="load velodyne_height_map/HeightMapNodelet velodyne_nodelet_manager">
@@ -23,7 +23,7 @@
     <include file="$(find velodyne_multi_laserscan)/launch/nodelet.launch">
       <arg name="min_z" value="-0.6" />
       <arg name="max_z" value="1.0" />
-      <param name="resolution" value="0.02" />
+      <arg name="resolution" value="0.01" />
     </include>
   </group>
 </launch>

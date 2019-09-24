@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="low_confidence_detections" default="false" />
+
+  <!-- Launch detectors -->
+  <include file="$(find oru_ipw_launch)/launch/spencer/detection.launch">
+    <arg name="low_confidence_detections" value="$(arg low_confidence_detections)" />
+  </include>
+
+  <!-- Launch tracking -->
+  <include file="$(find oru_ipw_launch)/launch/spencer/tracking.launch">
+    <arg name="rgbd" default="false" />
+    <arg name="laser_low_confidence_detections" default="true" />
+  </include>
+</launch>
