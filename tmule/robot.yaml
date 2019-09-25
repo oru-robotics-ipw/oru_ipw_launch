@@ -25,6 +25,10 @@ windows:
     tags: [other]
     panes:
       - roslaunch oru_ipw_launch mcl_2d.launch
+  - name: people
+    tags: [other,nav]
+    panes:
+      - roslaunch oru_ipw_launch people_spencer.launch
   - name: nav
     tags: [other,nav]
     panes:
