@@ -19,7 +19,7 @@ windows:
     tags: [other]
     panes:
       - roslaunch oru_ipw_description automower_robot_description.launch
-      - roslaunch oru_ipw_maps lab.launch
+      - roslaunch oru_ipw_maps hst.launch
       - rosrun libsensors_monitor libsensors_monitor
   - name: mcl
     tags: [other]

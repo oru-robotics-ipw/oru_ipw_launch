@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!-- Launch QuickMCL localisation -->
 <launch>
-  <arg name="sensor_topic" default="/sensors/laser/scan" />
+  <arg name="sensor_topic" default="/sensors/laser/multi_scan" />
   <arg name="output" default="screen" />
   <group ns="mcl">
     <!-- Remap some topic back to outside namespace -->
