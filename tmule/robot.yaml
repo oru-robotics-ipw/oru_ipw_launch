@@ -13,7 +13,7 @@ windows:
   - name: sensors
     tags: [other]
     panes:
-      - roslaunch oru_ipw_launch realsense_camera.launch
+      - rosrun oru_ipw_launch realsense_keepalive
       - roslaunch oru_ipw_launch velodyne.launch --screen
   - name: misc
     tags: [other]
