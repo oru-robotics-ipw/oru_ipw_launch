@@ -1,0 +1,40 @@
+session: bag_replay
+
+init_cmd: |
+  source ~/ipw/ws/devel/setup.bash
+
+windows:
+  - name: roscore
+    tags: [core]
+    panes:
+      - roscore
+    wait: 0
+    check: rostopic list && rosparam set /use_sim_time True
+  - name: sensors
+    tags: [other]
+    panes:
+      - roslaunch oru_ipw_launch velodyne.launch --screen
+  - name: misc
+    tags: [other]
+    panes:
+      - roslaunch oru_ipw_description automower_robot_description.launch
+      - roslaunch oru_ipw_maps hst.launch
+      - rosrun odometry_republisher node odom:=/hrp/odom
+  - name: mcl
+    tags: [other]
+    panes:
+      - roslaunch oru_ipw_launch mcl_2d.launch
+  - name: people
+    tags: [other,nav]
+    panes:
+      - roslaunch oru_ipw_launch people_spencer.launch
+  - name: nav
+    tags: [other,nav]
+    panes:
+      - roslaunch oru_ipw_navigation navigation.launch
+  - name: rviz
+    panes:
+      - rviz
+  - name: rqt
+    panes:
+      - rqt
