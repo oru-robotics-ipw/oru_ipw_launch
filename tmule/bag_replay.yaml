@@ -21,7 +21,7 @@ windows:
       - roslaunch oru_ipw_maps hst.launch
       - rosrun odometry_republisher node odom:=/hrp/odom
   - name: mcl
-    tags: [other]
+    tags: [other,nav]
     panes:
       - roslaunch oru_ipw_launch mcl_2d.launch
   - name: people
