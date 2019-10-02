@@ -20,7 +20,9 @@ windows:
     panes:
       - roslaunch oru_ipw_description automower_robot_description.launch
       - roslaunch oru_ipw_maps hst.launch
-      - rosrun libsensors_monitor libsensors_monitor
+      - roslaunch oru_ipw_launch diagnostics.launch host:=$HOSTNAME
+      - roslaunch oru_ipw_launch global_diagnostics.launch
+      - roslaunch oru_ipw_launch web.launch
   - name: mcl
     tags: [other]
     panes:

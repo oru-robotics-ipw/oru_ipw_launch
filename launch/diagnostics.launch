@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="host" />
+  <arg name="ntp_host" default="athena" />
+  <group ns="diagnostics/$(arg host)">
+    <!-- Start some basic diagnostics nodes -->
+    <node pkg="diagnostic_common_diagnostics"
+          type="cpu_monitor.py"
+          name="cpu_monitor" />
+    <node pkg="diagnostic_common_diagnostics"
+          type="sensors_monitor.py"
+          name="sensors_monitor" />
+    <node pkg="diagnostic_common_diagnostics"
+          type="ntp_monitor.py"
+          name="ntp_monitor"
+          args="--no-self-test $(arg ntp_host)" />
+  </group>
+</launch>

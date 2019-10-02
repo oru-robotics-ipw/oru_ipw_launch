@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!-- Launch web socket server -->
+<launch>
+  <group ns="web">
+    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch">
+      <arg name="ssl" value="true" />
+      <arg name="certfile" value="/etc/nginx/ssl/cert.pem" />
+      <arg name="keyfile" value="/etc/nginx/ssl/key.pem" />
+      <arg name="bson_only_mode" value="false" />
+    </include>
+  </group>
+</launch>

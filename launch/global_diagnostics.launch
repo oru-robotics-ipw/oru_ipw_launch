@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+  <group ns="diagnostics/global">
+    <!-- Start some basic diagnostics nodes -->
+    <node pkg="diagnostic_common_diagnostics"
+          type="tf_monitor.py"
+          name="tf_monitor" />
+  </group>
+</launch>
