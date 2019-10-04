@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!-- Launch Orbbec Astra driver -->
+<launch>
+  <group ns="sensors">
+    <include file="$(find astra_camera)/launch/astrapro.launch">
+      <arg name="camera" value="camera" />
+    </include>
+  </group>
+</launch>

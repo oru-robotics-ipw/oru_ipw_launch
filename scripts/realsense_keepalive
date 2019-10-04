@@ -2,7 +2,7 @@
 # Restart the RealSense driver if it dies
 
 while true; do
-	roslaunch oru_ipw_launch realsense_camera.launch
+	roslaunch oru_ipw_launch camera_realsense.launch
 	# Give everything some time to settle after a crash
 	sleep 5
 done
