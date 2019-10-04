@@ -1,13 +1,14 @@
 <?xml version="1.0"?>
 <!-- Launch web socket server -->
 <launch>
-  <group ns="web">
-    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch">
-      <arg name="ssl" value="true" />
-      <arg name="certfile" value="/etc/nginx/ssl/cert.pem" />
-      <arg name="keyfile" value="/etc/nginx/ssl/key.pem" />
-      <arg name="bson_only_mode" value="false" />
-    </include>
-    <node pkg="tf2_web_republisher" type="tf2_web_republisher" name="tf2_web_republisher" />
-  </group>
+  <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch">
+    <arg name="ssl" value="true" />
+    <arg name="certfile" value="/etc/nginx/ssl/cert.pem" />
+    <arg name="keyfile" value="/etc/nginx/ssl/key.pem" />
+    <arg name="bson_only_mode" value="false" />
+  </include>
+  <!-- Node name and namespace is sadly critical for correct functionality. -->
+  <node pkg="tf2_web_republisher"
+        type="tf2_web_republisher"
+        name="tf2_web_republisher" />
 </launch>
