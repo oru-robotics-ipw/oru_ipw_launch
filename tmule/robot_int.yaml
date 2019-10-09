@@ -1,0 +1,37 @@
+session: robot_internal
+
+init_cmd: |
+  source ~/ipw/ws/devel/setup.bash
+  export ROS_MASTER_URI=http://automower1:11311
+
+windows:
+  - name: roscore_wait
+    tags: [core]
+    panes:
+      - echo "Waiting for external roscore"
+    wait: 0
+    check: rostopic list > /dev/null
+  - name: sensors
+    tags: [other]
+    panes:
+      - roslaunch oru_ipw_launch velodyne.launch --screen
+  - name: misc
+    tags: [other]
+    panes:
+      - roslaunch oru_ipw_launch diagnostics.launch host:=$HOSTNAME
+  - name: mcl
+    tags: [other]
+    panes:
+      - roslaunch oru_ipw_launch mcl_2d.launch
+  - name: people
+    tags: [other,nav]
+    panes:
+      - roslaunch oru_ipw_launch people_spencer.launch
+  - name: nav
+    tags: [other,nav]
+    panes:
+      - roslaunch oru_ipw_navigation navigation.launch
+  - name: hrp
+    tags: [other,hrp]
+    panes:
+      - roslaunch oru_ipw_launch hrp_driver.launch

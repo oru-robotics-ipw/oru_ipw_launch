@@ -5,5 +5,11 @@
     <include file="$(find astra_camera)/launch/astrapro.launch">
       <arg name="camera" value="camera" />
     </include>
+    <group ns="camera">
+      <remap from="points" to="depth/points" />
+      <include file="$(find point_cloud_subsampler)/launch/subsampler_nodelet.launch">
+        <arg name="nodelet_manager" value="camera_nodelet_manager" />
+      </include>
+    </group>
   </group>
 </launch>
