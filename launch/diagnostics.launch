@@ -10,9 +10,9 @@
     <node pkg="diagnostic_common_diagnostics"
           type="sensors_monitor.py"
           name="sensors_monitor" />
-    <node pkg="diagnostic_common_diagnostics"
+    <!--<node pkg="diagnostic_common_diagnostics"
           type="hd_monitor.py"
-          name="hd_monitor" />
+          name="hd_monitor" />-->
     <node pkg="diagnostic_common_diagnostics"
           type="ntp_monitor.py"
           name="ntp_monitor"

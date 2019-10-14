@@ -2,7 +2,7 @@ session: diag
 
 init_cmd: |
   source ~/ipw/ws/devel/setup.bash
-  export ROS_MASTER_URI=http://automower1:11311
+  export ROS_MASTER_URI=http://automower2:11311
 
 windows:
   - name: roscore_wait

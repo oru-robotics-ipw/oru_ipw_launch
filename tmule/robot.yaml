@@ -1,0 +1,41 @@
+session: robot
+
+init_cmd: |
+  source ~/ipw/ws/devel/setup.bash
+
+windows:
+  - name: roscore
+    tags: [core]
+    panes:
+      - roscore
+    wait: 0
+    check: rostopic list > /dev/null
+  - name: sensors
+    tags: [other]
+    panes:
+      - roslaunch oru_ipw_launch velodyne.launch --screen
+      - roslaunch oru_ipw_launch camera_astra.launch --screen
+  - name: misc
+    tags: [other]
+    panes:
+      - roslaunch oru_ipw_description automower_robot_description.launch
+      - roslaunch oru_ipw_maps hst.launch
+      - roslaunch oru_ipw_launch diagnostics.launch host:=$HOSTNAME
+      - roslaunch oru_ipw_launch global_diagnostics.launch
+      - roslaunch oru_ipw_launch web.launch
+  - name: mcl
+    tags: [other]
+    panes:
+      - roslaunch oru_ipw_launch mcl_2d.launch
+  - name: people
+    tags: [other,nav]
+    panes:
+      - roslaunch oru_ipw_launch people_spencer.launch
+  - name: nav
+    tags: [other,nav]
+    panes:
+      - roslaunch oru_ipw_navigation navigation.launch
+  - name: hrp
+    tags: [other,hrp]
+    panes:
+      - roslaunch oru_ipw_launch hrp_driver.launch
