@@ -22,7 +22,13 @@ windows:
       - roslaunch oru_ipw_maps hst.launch
       - roslaunch oru_ipw_launch diagnostics.launch host:=$HOSTNAME
       - roslaunch oru_ipw_launch global_diagnostics.launch
+      # Temporary
+      - roslaunch oru_ipw_launch xbox360_teleop.launch --screen
+  - name: web
+    tags: [other,web]
+    panes:
       - roslaunch oru_ipw_launch web.launch
+      - roslaunch oru_ipw_launch data_store.launch
   - name: mcl
     tags: [other]
     panes:

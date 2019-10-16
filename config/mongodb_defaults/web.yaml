@@ -1,0 +1,9 @@
+web:
+  next_id: 1
+  locations:
+    - name: Origin
+      x: 0.0
+      y: 0.0
+      theta: 0.0
+      id: 0
+
