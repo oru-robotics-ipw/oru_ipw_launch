@@ -13,34 +13,34 @@ windows:
   - name: sensors
     tags: [other]
     panes:
-      - roslaunch oru_ipw_launch velodyne.launch --screen
-      - roslaunch oru_ipw_launch camera_astra.launch --screen
+      - roslaunch --screen oru_ipw_launch velodyne.launch
+      - roslaunch --screen oru_ipw_launch camera_astra.launch
   - name: misc
     tags: [other]
     panes:
-      - roslaunch oru_ipw_description automower_robot_description.launch
-      - roslaunch oru_ipw_maps hst.launch
-      - roslaunch oru_ipw_launch diagnostics.launch host:=$HOSTNAME
-      - roslaunch oru_ipw_launch global_diagnostics.launch
+      - roslaunch --screen oru_ipw_description automower_robot_description.launch
+      - roslaunch --screen oru_ipw_maps hst.launch
+      - roslaunch --screen oru_ipw_launch diagnostics.launch host:=$HOSTNAME
+      - roslaunch --screen oru_ipw_launch global_diagnostics.launch
       # Temporary
-      - roslaunch oru_ipw_launch xbox360_teleop.launch --screen
+      - roslaunch --screen oru_ipw_launch xbox360_teleop.launch
   - name: web
     tags: [other,web]
     panes:
-      - roslaunch oru_ipw_launch web.launch
-      - roslaunch oru_ipw_launch data_store.launch
+      - roslaunch --screen oru_ipw_launch web.launch
+      - roslaunch --screen oru_ipw_launch data_store.launch
   - name: mcl
     tags: [other]
     panes:
-      - roslaunch oru_ipw_launch mcl_2d.launch
+      - roslaunch --screen oru_ipw_launch mcl_2d.launch
   - name: people
     tags: [other,nav]
     panes:
-      - roslaunch oru_ipw_launch people_spencer.launch
+      - roslaunch --screen oru_ipw_launch people_spencer.launch
   - name: nav
     tags: [other,nav]
     panes:
-      - roslaunch oru_ipw_navigation navigation.launch
+      - roslaunch --screen oru_ipw_navigation navigation.launch
   - name: hrp
     tags: [other,hrp]
     panes:
