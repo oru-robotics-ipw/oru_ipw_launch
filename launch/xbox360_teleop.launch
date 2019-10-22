@@ -10,7 +10,8 @@
       <param name="enable_button" value="4"/>
       <param name="enable_turbo_button" value="5"/>
       <param name="scale_linear" value="0.4"/>
-      <param name="scale_langular" value="1.0"/>
+      <param name="scale_linear_turbo" value="1.0"/>
+      <param name="scale_angular" value="1.2"/>
       <remap from="cmd_vel" to="/hrp/cmd_vel"/>
     </node>
 
