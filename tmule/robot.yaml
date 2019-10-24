@@ -29,6 +29,10 @@ windows:
     panes:
       - roslaunch --screen oru_ipw_launch web.launch
       - roslaunch --screen oru_ipw_launch data_store.launch
+  - name: controller
+    tags: [other]
+    panes:
+      - rosrun oru_ipw_controller controller
   - name: mcl
     tags: [other]
     panes:
