@@ -9,6 +9,7 @@
       <remap from="points" to="depth/points" />
       <include file="$(find point_cloud_subsampler)/launch/subsampler_nodelet.launch">
         <arg name="nodelet_manager" value="camera_nodelet_manager" />
+        <arg name="resolution" value="0.2" />
       </include>
     </group>
   </group>

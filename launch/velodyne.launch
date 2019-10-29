@@ -25,5 +25,14 @@
       <arg name="max_z" value="1.0" />
       <arg name="resolution" value="0.01" />
     </include>
+    <group>
+      <remap from="points" to="velodyne_points" />
+      <include file="$(find point_cloud_subsampler)/launch/subsampler_nodelet.launch">
+        <arg name="nodelet_manager" value="velodyne_nodelet_manager" />
+        <arg name="resolution" value="0.15" />
+        <!-- Make the radius just large enough to cover the entire local costmap (8x8 m) -->
+        <arg name="max_dist" default="5.66" />
+      </include>
+    </group>
   </group>
 </launch>
