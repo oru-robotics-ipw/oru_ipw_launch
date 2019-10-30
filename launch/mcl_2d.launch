@@ -16,10 +16,10 @@
       <arg name="output" value="$(arg output)" />
 
       <!-- Decrease motion model noise, the platform has good odometry -->
-      <arg name="motion_model_alpha_1" value="0.02" />
-      <arg name="motion_model_alpha_2" value="0.02" />
-      <arg name="motion_model_alpha_3" value="0.02" />
-      <arg name="motion_model_alpha_4" value="0.02" />
+      <arg name="motion_model_alpha_1" value="0.03" />
+      <arg name="motion_model_alpha_2" value="0.03" />
+      <arg name="motion_model_alpha_3" value="0.03" />
+      <arg name="motion_model_alpha_4" value="0.03" />
       <arg name="particle_filter_kld_epsilon" value="0.04" />
       <arg name="particle_filter_kld_z" value="0.96" />
     </include>
