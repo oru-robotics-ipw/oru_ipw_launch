@@ -24,4 +24,5 @@
       <arg name="particle_filter_kld_z" value="0.96" />
     </include>
   </group>
+  <include file="$(find oru_ipw_maps)/launch/hst.launch" />
 </launch>

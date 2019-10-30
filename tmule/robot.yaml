@@ -19,10 +19,8 @@ windows:
     tags: [other]
     panes:
       - roslaunch --screen oru_ipw_description automower_robot_description.launch
-      - roslaunch --screen oru_ipw_maps lab.launch
       - roslaunch --screen oru_ipw_launch diagnostics.launch host:=$HOSTNAME
       - roslaunch --screen oru_ipw_launch global_diagnostics.launch
-      # Temporary
       - roslaunch --screen oru_ipw_launch xbox360_teleop.launch
   - name: web
     tags: [other,web]
@@ -49,3 +47,8 @@ windows:
     tags: [other,hrp]
     panes:
       - roslaunch --screen oru_ipw_launch hrp_driver.launch
+# Debug example to use, remember to disable the debugged node elsewhere as well.
+#  - name: debug
+#    tags: [other]
+#    panes:
+#      - ROS_NAMESPACE=sensors/camera gdb --args $HOME/ipw/ws/devel/lib/point_cloud_subsampler/point_cloud_subsampler_node points:=/sensors/camera/depth/points
