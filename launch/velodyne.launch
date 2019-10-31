@@ -31,7 +31,9 @@
         <arg name="nodelet_manager" value="velodyne_nodelet_manager" />
         <arg name="resolution" value="0.15" />
         <!-- Make the radius just large enough to cover the entire local costmap (8x8 m) -->
-        <arg name="max_dist" default="5.66" />
+        <arg name="max_dist" value="5.66" />
+        <arg name="min_z" value="0.01" />
+        <arg name="min_z_slope" value="0.01" />
       </include>
     </group>
   </group>
