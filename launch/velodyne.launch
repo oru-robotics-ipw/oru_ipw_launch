@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <!-- Launch Velodyne nodelets -->
 <launch>
+  <param name="/velodyne_nodelet_manager_driver/model" value="VLP16" />
+  <param name="/velodyne_nodelet_manager_driver/rpm" value="1200" />
   <group ns="sensors/laser">
     <include file="$(find velodyne_driver)/launch/nodelet_manager.launch">
       <arg name="model" value="VLP16" />
