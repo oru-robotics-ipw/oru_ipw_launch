@@ -1,8 +1,6 @@
 <?xml version="1.0"?>
 <!-- Launch Velodyne nodelets -->
 <launch>
-  <param name="/velodyne_nodelet_manager_driver/model" value="VLP16" />
-  <param name="/velodyne_nodelet_manager_driver/rpm" value="1200" />
   <group ns="sensors/laser">
     <include file="$(find velodyne_driver)/launch/nodelet_manager.launch">
       <arg name="model" value="VLP16" />
@@ -11,6 +9,7 @@
     <include file="$(find velodyne_pointcloud)/launch/cloud_nodelet.launch">
       <arg name="calibration" value="$(find oru_ipw_description)/calibration/vlp16_calib.yaml" />
       <arg name="min_range" value="0.1" />
+      <arg name="model" value="VLP16" />
     </include>
     <include file="$(find velodyne_pointcloud)/launch/laserscan_nodelet.launch">
       <!-- Decrease resolution to reduce load -->
