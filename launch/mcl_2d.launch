@@ -3,6 +3,7 @@
 <launch>
   <arg name="sensor_topic" default="/sensors/laser/multi_scan" />
   <arg name="output" default="screen" />
+  <arg name="map_launch" default="$(find oru_ipw_maps)/launch/lab.launch" />
   <group ns="mcl">
     <!-- Remap some topic back to outside namespace -->
     <remap from="initialpose" to="/initialpose" />
@@ -24,5 +25,5 @@
       <arg name="particle_filter_kld_z" value="0.96" />
     </include>
   </group>
-  <include file="$(find oru_ipw_maps)/launch/lab.launch" />
+  <include file="$(arg map_launch)" />
 </launch>
